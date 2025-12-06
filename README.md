@@ -1,84 +1,54 @@
 # Simple Soundboard
 
-A lightweight web soundboard that plays short audio clips (dog, cat, pop, clap, bell, whistle).
+A small, single-page web soundboard that plays short audio clips (dog, cat, pop, clap, bell, whistle).
 
-Click a button to play a sound, adjust the global volume with the slider, and toggle mute with the button.
+Click a button to play a sound, adjust the volume with the slider, and mute/unmute with the button.
 
----
+## Quick Overview
 
-## Features
+- Single active sound: playing a new clip stops the previous one to prevent overlap.
+- Volume slider controls the global volume.
+- The currently playing button receives a `.playing` class for visual highlighting.
 
-- Play Sounds: click a button to play a short clip.
-- Single Active Sound: starting a new sound stops the previous one to prevent overlapping.
-- Volume Control: adjustable global volume via the slider.
-- Mute Button: toggle mute/unmute.
-- Playing State: the button for the currently playing sound receives a `.playing` class for a visual highlight.
+## Folder layout (project root)
 
-## Files
-
-- `index.html` — Main HTML page and UI.
-- `style.css` — Styles and the `.sound-btn.playing` state.
-- `script.js` — JavaScript logic: audio objects, control handlers, and UI interaction.
-- `sounds/` — Folder containing audio files used by the app (e.g., `dog.mp3`, `cat.mp3`, ...).
-
-## Getting Started
-
-### Prerequisites
-
-A modern web browser. Optional: Python or Node.js to serve files locally.
-
-### Open Locally (quick)
-
-Double-click `index.html` to open it in your browser. Note: some browsers restrict audio when files are opened via the `file://` protocol — using a local server is recommended.
-
-### Run Locally (recommended)
-
-From the project directory (PowerShell):
-
-```powershell
-# Option 1: Python (if installed)
-python -m http.server 8000
-
-# Option 2: Node (if installed)
-npx http-server -c-1
-
-# Then open:
-# http://localhost:8000
 ```
+Project/                              <-- repository root
+├─ index.html                         <-- main page
+├─ style.css                          <-- styles (includes .sound-btn.playing)
+├─ script.js                          <-- audio + UI logic
+├─ README.md                          <-- this file
+└─ sounds/                            <-- audio files
+	├─ dog.mp3
+	├─ cat.mp3
+	├─ pop.mp3
+	├─ clap.mp3
+	├─ bell.mp3
+	└─ whistle.mp3
+```
+
+## How to open
+
+Open `index.html` in a modern browser (double-click the file or open it from the browser). Then click any sound button to play a clip.
+
+Note: you must interact (click) to start sounds — browsers often block autoplay without user interaction.
 
 ## Usage
 
-- Click any sound button to play that clip.
-- Adjust volume with the slider — it affects all sounds.
-- Click `Mute` to toggle sound off and on.
-- While a clip plays, its button will highlight (has the `.playing` class).
+- Click a sound button to play it.
+- Adjust the `Volume` slider to change volume for all sounds.
+- Use the `Mute` button to toggle audio on/off.
+- While a clip plays, its button gets the `.playing` class (visual highlight).
 
 ## Troubleshooting
 
-- No sound / "Play failed": make sure you click a button — browsers often block autoplay without user interaction.
-- Files not found: open DevTools → Network to check for 404s (verify `sounds/*.mp3` exist and paths match).
-- JS errors: check DevTools → Console for errors such as `null` references (ensure `script.js` is included after the DOM or uses `defer` / `DOMContentLoaded`).
-- Still broken: serve via a local server (see Run Locally).
+- No audio: ensure the sound files exist in the `sounds/` folder and are named correctly.
+- Missing files: open DevTools → Network to check for 404s.
+- JavaScript errors: open DevTools → Console and verify `script.js` is loaded (it should be included at the end of `index.html`).
 
-## Customizing
+## Customization
 
-- Add sounds: put audio files in `sounds/`, add a button in `index.html` with `data-sound="yourName"`, and add an entry to the `sounds` map in `script.js`.
-- Style: edit `style.css` to adjust colors, animations, or the `.sound-btn.playing` rule.
-- Persist volume: add `localStorage` logic to remember `currentVolume` between reloads.
+- Add more audio: put files into `sounds/`, add a matching button to `index.html` with `data-sound="name"`, and add an entry to the `sounds` map in `script.js`.
+- Styling: edit `style.css` to change the look and the `.sound-btn.playing` appearance.
 
-## Contributing
-
-Fork, make changes, and open a PR. Keep changes focused (add new sounds, improve accessibility, add keyboard shortcuts).
-
-## License
-
-Add a license of your choice (e.g., MIT) if you plan to share publicly.
-
----
-
-If you want, I can also:
-- Commit the new `README.md` for you, or
-- Add a short `LICENSE` file (e.g., MIT), or
-- Add keyboard shortcuts and accessibility improvements.
-
-Which should I do next?
+If you'd like, I can commit this change for you (already did earlier for the previous README change). Want me to commit and push this updated README as well?
