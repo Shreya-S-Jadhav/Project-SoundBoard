@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Soundboard</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <h1>🎵Soundboard🎵</h1>
+  <p>Click a button to play a sound. Use the slider to control volume.</p>
+
+  <div class="card">
+    
+    <div class="soundboard">
+      <button class="sound-btn" data-sound="dog">🐶 Dog</button>
+      <button class="sound-btn" data-sound="cat">🐱 Cat</button>
+      <button class="sound-btn" data-sound="pop">🫧 Pop</button>
+      <button class="sound-btn" data-sound="clap">👏 Clap</button>
+      <button class="sound-btn" data-sound="bell">🔔 Bell</button>
+      <button class="sound-btn" data-sound="whistle">🎵 Whistle</button>
+    </div>
+    
+    <div class="controls">
+      <div class="slider-row">
+        <label for="volume">Volume</label>
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" />
+      </div>
+      <button id="mute-btn">Mute 🔇</button>
+      <small>Tip: you can quickly change sounds and the audio restarts from the beginning.</small>
+    </div>
+  </div>
+
+  
+</body>
+<script src="script.js"></script>
+</html>
