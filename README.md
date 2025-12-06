@@ -49,6 +49,4 @@ Note: you must interact (click) to start sounds — browsers often block autopla
 ## Customization
 
 - Add more audio: put files into `sounds/`, add a matching button to `index.html` with `data-sound="name"`, and add an entry to the `sounds` map in `script.js`.
-- Styling: edit `style.css` to change the look and the `.sound-btn.playing` appearance.
-
-If you'd like, I can commit this change for you (already did earlier for the previous README change). Want me to commit and push this updated README as well?
+- Styling: edit `style.css` to change the look and the `.sound-btn.playing` appearance
